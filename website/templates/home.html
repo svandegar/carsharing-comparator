@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <h1>Welcome to Car-sharing compare</h1>
+    <p>Enter the details of your trip to calculate the cost</p>
+    {% from "includes/_formhelpers.html" import render_field %}
+    <form method="POST" action="">
+        <div class="form-group">
+            {{ render_field(form.start, class_="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ render_field(form.end, class_="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ render_field(form.distance, class_="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ render_field(form.passengers, class_="form-control") }}
+        </div>
+        <hr>
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+    <br>
+    <ul class="list-group">
+        {% if rate %}
+            <li class="list-group-item">Best rate : Modo {{ rate['rate'].title() }} </li>
+            <li class="list-group-item">Raw cost : {{ rate['cost']['raw'] }}$ </li>
+            <li class="list-group-item">PVRT : {{ rate['cost']['pvrt'] }}$ </li>
+            <li class="list-group-item">GST : {{ rate['cost']['gst'] }}$ </li>
+            <li class="list-group-item">PST : {{ rate['cost']['pst'] }}$ </li>
+            <li class="list-group-item lead">Total cost : {{ rate['cost']['total'] }}$ </li>
+
+        {% endif %}
+    </ul>
+
+{% endblock %}
