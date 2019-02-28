@@ -1,9 +1,10 @@
-from wtforms import Form, validators, StringField, DateTimeField, IntegerField
+from wtforms import Form, validators, DateField, DateTimeField, IntegerField
 
 
 class InputForm(Form):
-    start = DateTimeField('Departure', [validators.DataRequired()])
-    end = DateTimeField('Return', [validators.DataRequired()])
+    # date = DateField('Date',[validators.DataRequired()])
+    start = DateTimeField('Departure')
+    end = DateTimeField('Return')
     distance = IntegerField('Distance [km]', [validators.DataRequired()])
     passengers = IntegerField('Number of passengers',
                               [validators.DataRequired(),

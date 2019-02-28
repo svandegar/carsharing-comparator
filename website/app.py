@@ -3,6 +3,7 @@ import backend
 from website import app
 from website.utils import forms
 
+
 # get inputs :
 night = {
     "from": 19,
@@ -72,6 +73,7 @@ def home():
                     end=form.end.data,
                     passengers=form.passengers.data
                 )
+
         return render_template('home.html',form=form, rate=rate)
 
     return render_template('home.html', form=form)
