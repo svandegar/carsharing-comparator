@@ -77,3 +77,8 @@ def home():
         return render_template('home.html',form=form, rate=rate)
 
     return render_template('home.html', form=form)
+
+
+@app.route('/test')
+def test():
+    return render_template('test.html')
