@@ -65,9 +65,7 @@ def home():
     form = forms.InputForm(request.form)
     if request.method == 'POST' and form.validate():
         rate = backend.modo.best_rate(
-                    rates,
-                    night,
-                    taxes,
+                    backend.backend.modo.inputs,
                     distance=form.distance.data,
                     start=form.start.data,
                     end=form.end.data,
@@ -77,8 +75,3 @@ def home():
         return render_template('home.html',form=form, rate=rate)
     print(form.validate())
     return render_template('home.html', form=form)
-
-
-@app.route('/test')
-def test():
-    return render_template('test.html')
