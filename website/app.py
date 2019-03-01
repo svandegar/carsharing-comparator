@@ -63,6 +63,7 @@ taxes = {
 @app.route('/', methods=['GET', 'POST'])
 def home():
     form = forms.InputForm(request.form)
+    print(type(form.end.data))
     if request.method == 'POST' and form.validate():
         rate = backend.modo.best_rate(
                     rates,
@@ -75,7 +76,7 @@ def home():
                 )
 
         return render_template('home.html',form=form, rate=rate)
-
+    print(form.validate())
     return render_template('home.html', form=form)
 
 
