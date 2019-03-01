@@ -1,5 +1,16 @@
 import datetime
+import os
+dirname = os.path.dirname(__file__)
+DATA_INPUT = os.path.join(dirname, 'data','modo.json')
+# DATA_INPUT = os.getcwd()+r'\..\backend\data\modo.json'
 
+
+def get_inputs(input):
+        import json
+        with open(input) as file:
+            return json.load(file)
+
+inputs = get_inputs(DATA_INPUT)
 
 def cost_raw(subscription: str,
              rates: dict,
@@ -75,14 +86,16 @@ def calculate_taxes(taxes: dict, hours: int, raw_cost: float) -> dict:
 
 
 def best_rate(
-        rates: dict,
-        night: dict,
-        taxes: dict,
+        inputs: dict,
         distance: int,
         start: datetime.datetime,
         end: datetime.datetime,
         passengers: int,
         type='normal') -> dict:
+    rates = inputs['rates']
+    night = inputs['night']
+    taxes = inputs['taxes']
+
     monthly = cost_raw('monthly',rates,night,distance,start,end,passengers,type)
     plus = cost_raw('plus',rates,night,distance,start,end,passengers,type)
 

@@ -1,0 +1,51 @@
+{
+  "night": {
+    "from": 19,
+    "to": 9
+  },
+  "rates": {
+    "monthly": {
+      "km": 0.3,
+      "free_km": 250,
+      "normal": {
+        "hour": 9,
+        "day": 72,
+        "night": 27
+      },
+      "large&loadable": {
+        "hour": 10,
+        "day": 80,
+        "night": 30
+      },
+      "oversize&premium": {
+        "hour": 14,
+        "day": 112,
+        "night": 42
+      }
+    },
+    "plus": {
+      "km": 0.3,
+      "free_km": 0,
+      "normal": {
+        "hour": 5,
+        "day": 50,
+        "night": 15
+      },
+      "large&loadable": {
+        "hour": 6,
+        "day": 60,
+        "night": 18
+      },
+      "oversize&premium": {
+        "hour": 10,
+        "dayh": 100,
+        "night": 30
+      }
+    }
+  },
+  "taxes": {
+    "gst": 5,
+    "pst": 7,
+    "pvrt": 1.5
+  }
+}

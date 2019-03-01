@@ -1,61 +1,20 @@
 import datetime
+import os
+import json
 from backend import modo
 
-# Set parameters
+# get inputs
+dirname = os.path.dirname(__file__)
+DATA_INPUT = os.path.join(dirname, 'test_data', 'test_modo.json')
 
-night = {
-    "from": 19,
-    "to": 9}
+with open(DATA_INPUT) as file:
+    inputs = json.load(file)
 
-rates = {
-    "monthly": {
-        "km": 0.3,
-        "free_km": 250,
-        "normal": {
-            "hour": 9,
-            "day": 72,
-            "night": 27
-        },
-        "large&loadable": {
-            "hour": 10,
-            "day": 80,
-            "night": 30
+    rates = inputs['rates']
+    night = inputs['night']
+    taxes = inputs['taxes']
 
-        },
-        "oversize&premium": {
-            "hour": 14,
-            "day": 112,
-            "night": 42
-        },
-
-    },
-    "plus": {
-        "km": 0.3,
-        "free_km": 0,
-        "normal": {
-            "hour": 5,
-            "day": 50,
-            "night": 15
-        },
-        "large&loadable": {
-            "hour": 6,
-            "day": 60,
-            "night": 18
-
-        },
-        "oversize&premium": {
-            "hour": 10,
-            "dayh": 100,
-            "night": 30
-        },
-
-    }
-}
-taxes = {
-    "gst": 5,
-    "pst": 7,
-    "pvrt": 1.5
-}
+inputs = dict(night=night, rates=rates, taxes=taxes)
 
 # normal rate
 start1 = datetime.datetime(year=2018, month=12, day=24, hour=4, minute=0)
@@ -149,16 +108,14 @@ def test_calculate_taxes():
 
 
 def test_best_rate():
-    assert (modo.best_rate(rates,
-                           night,
-                           taxes,
+    assert (modo.best_rate(inputs,
                            distance=79,
                            start=start1,
                            end=end1,
                            passengers=2) == {
                 "rate": "plus",
                 "cost": {
-                    "raw":53.7,
+                    "raw": 53.7,
                     "gst": 2.69,
                     "pst": 3.76,
                     "pvrt": 0,
@@ -166,16 +123,14 @@ def test_best_rate():
                 }
             })
 
-    assert (modo.best_rate(rates,
-                           night,
-                           taxes,
+    assert (modo.best_rate(inputs,
                            distance=100,
                            start=start1,
                            end=end1,
                            passengers=2) == {
                 "rate": "monthly",
                 "cost": {
-                    "raw":54,
+                    "raw": 54,
                     "gst": 2.7,
                     "pst": 3.78,
                     "pvrt": 0,
