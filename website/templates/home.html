@@ -2,15 +2,18 @@
 
 {% block body %}
 
-    <h1>Welcome to Car-sharing compare</h1>
+    <h1>Car-sharing compare</h1>
+    <hr>
     <p>Enter the details of your trip to calculate the cost</p>
-    <small>This app is curently only using data from Modo</small>
+
     {% from "includes/_formhelpers.html" import render_field %}
-    <form method="POST" action="">
+    <form method="POST" action="" class="col-sm-6 col-lg-3">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+<div>
+                    <label><span style="color:red">* </span>Departure</label>
                     <div class="form-group">
+
                         <div class="input-group date datetimepicker" id="datetimepicker1" data-target-input="nearest">
                             {{ render_field(form.start, class_="form-control datetimepicker-input datetimepicker", **{"data-target":"#datetimepicker1"}) }}
                             <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
@@ -20,11 +23,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+</div>
 
                 <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+<div>
+                    <label><span style="color:red">* </span>Return</label>
                     <div class="form-group">
                         <div class="input-group date datetimepicker" id="datetimepicker2" data-target-input="nearest">
                             {{ render_field(form.end, class_="form-control datetimepicker-input datetimepicker", **{"data-target":"#datetimepicker2"}) }}
@@ -35,20 +39,23 @@
                     </div>
                 </div>
             </div>
-        </div>
+</div>
 
-        <div class="col-sm-4">
+        <div >
             {{ render_field(form.distance, class_="form-control") }}
         </div>
 
-        <div class="col-sm-4">
+        <div >
             {{ render_field(form.passengers, class_="form-control") }}
         </div>
         <hr>
-        <input class="btn btn-primary" type="submit" value="Submit">
+        <input class="btn btn-primary" type="submit" value="Submit"><br>
+
     </form>
+    <small> * This app is curently only using data from <a href="https://www.modo.coop/" target="_blank">Modo</a> </small>
     <br>
-    <ul class="list-group">
+    <hr>
+    <ul class="list-group  col-sm-6 col-lg-3">
         {% if rate %}
             <li class="list-group-item">Best rate : Modo {{ rate['rate'].title() }} </li>
             <li class="list-group-item">Raw cost : {{ rate['cost']['raw'] }}$</li>
