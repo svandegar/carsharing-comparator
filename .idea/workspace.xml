@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53c4b883-2b6b-432c-b198-dbbe54fb4ead" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/common.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests_backend/test_common.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests_backend/test_data/taxes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/evo.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/evo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/modo.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/modo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests_backend/test_evo.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests_backend/test_evo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/comparator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests_backend/test_common.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests_backend/test_comparator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests_backend/test_data/taxes.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/tests_backend/test_evo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="53" column="25" lean-forward="true" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+            <state relative-caret-position="898">
+              <caret line="55" column="12" lean-forward="true" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -56,9 +50,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/data/evo.json">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -106,20 +104,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/common.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/comparator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="19">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/tests_backend/test_common.py">
+        <entry file="file://$PROJECT_DIR$/backend/tests_backend/test_comparator.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -170,9 +165,11 @@
         <option value="$PROJECT_DIR$/website/app.py" />
         <option value="$PROJECT_DIR$/backend/modo.py" />
         <option value="$PROJECT_DIR$/backend/tests_backend/test_common.py" />
-        <option value="$PROJECT_DIR$/backend/common.py" />
         <option value="$PROJECT_DIR$/backend/evo.py" />
+        <option value="$PROJECT_DIR$/backend/data/evo.json" />
         <option value="$PROJECT_DIR$/backend/tests_backend/test_evo.py" />
+        <option value="$PROJECT_DIR$/backend/common.py" />
+        <option value="$PROJECT_DIR$/backend/comparator.py" />
       </list>
     </option>
   </component>
@@ -294,12 +291,12 @@
       <updated>1551320401903</updated>
       <workItem from="1551320403204" duration="18557000" />
       <workItem from="1551375574573" duration="15084000" />
-      <workItem from="1558982396369" duration="6079000" />
+      <workItem from="1558982396369" duration="6448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39720000" />
+    <option name="totallyTimeSpent" value="40089000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1213" y="27" width="1347" height="1413" extended-state="0" />
@@ -310,7 +307,7 @@
       <window_info id="aws.explorer" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32943925" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32919255" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32943925" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -320,7 +317,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32996893" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32919255" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32919255" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -470,7 +467,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/tests_backend/test_common.py">
+    <entry file="file://$PROJECT_DIR$/backend/tests_backend/test_comparator.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/modo.py">
@@ -486,32 +483,12 @@
     <entry file="file://$PROJECT_DIR$/backend/tests_backend/test_data/taxes.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/tests_backend/test_modo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="106" column="13" selection-start-line="100" selection-start-column="27" selection-end-line="106" selection-end-column="13" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/tests_backend/test_evo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="53" column="25" lean-forward="true" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -526,6 +503,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/data/evo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/tests_backend/test_data/test_evo.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -533,8 +517,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/data/evo.json">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/backend/tests_backend/test_evo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="898">
+          <caret line="55" column="12" lean-forward="true" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/comparator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

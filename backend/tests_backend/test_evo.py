@@ -65,3 +65,38 @@ def test_calculate_taxes():
                "pvrt": 1.5,
                "total": 110.32
            }
+
+
+def test_cost_taxes_included():
+    assert evo.cost_taxes_included(rates=rates,
+                                   taxes=taxes,
+                                   start=start1,
+                                   end=end1) == {
+               "raw": 11.25,
+               "gst": 0.56,
+               "pst": 0.79,
+               "pvrt": 0,
+               "total": 12.6
+           }
+
+    assert evo.cost_taxes_included(rates=rates,
+                                   taxes=taxes,
+                                   start=start2,
+                                   end=end2) == {
+               "raw": 90.94,
+               "gst": 4.55,
+               "pst": 6.37,
+               "pvrt": 0,
+               "total": 101.85
+           }
+
+    assert evo.cost_taxes_included(rates=rates,
+                                   taxes=taxes,
+                                   start=start3,
+                                   end=end3) == {
+               "raw": 90.99,
+               "gst": 4.62,
+               "pst":  6.47,
+               "pvrt": 1.5,
+               "total": 103.59
+           }
