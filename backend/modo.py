@@ -37,7 +37,7 @@ def cost_raw(subscription: str,
     applicable_rates = rates[subscription]
 
     # select car type
-    if passengers > 4:
+    if passengers > 5:
         type_rates = applicable_rates['large&loadable']
     else:
         type_rates = applicable_rates[type]

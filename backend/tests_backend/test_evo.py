@@ -9,8 +9,8 @@ DATA_INPUT = os.path.join(dirname, 'test_data', 'test_evo.json')
 
 with open(DATA_INPUT) as file:
     inputs = json.load(file)
-    rates = inputs['rates']
     taxes = inputs['taxes']
+    rates = inputs['rates']
 
 # minute rate
 start1 = datetime.datetime(year=2018, month=12, day=24, hour=4, minute=0)
@@ -30,17 +30,20 @@ def test_cost_raw():
     assert evo.cost_raw(rates=rates,
                         start=start1,
                         end=end1
-                        ) == 10.25 + 1
+                        ) == {'rate': 'Minute',
+                              'cost': 10.25 + 1}
 
     assert evo.cost_raw(rates=rates,
                         start=start2,
                         end=end2
-                        ) == 89.94 + 1
+                        ) == {'rate': 'Hour',
+                              'cost': 89.94 + 1}
 
     assert evo.cost_raw(rates=rates,
                         start=start3,
                         end=end3
-                        ) == 89.99 + 1
+                        ) == {'rate': 'Day',
+                              'cost': 89.99 + 1}
 
 
 def test_calculate_taxes():
@@ -68,35 +71,35 @@ def test_calculate_taxes():
 
 
 def test_cost_taxes_included():
-    assert evo.cost_taxes_included(rates=rates,
-                                   taxes=taxes,
+    assert evo.cost_taxes_included(inputs=inputs,
                                    start=start1,
-                                   end=end1) == {
-               "raw": 11.25,
-               "gst": 0.56,
-               "pst": 0.79,
-               "pvrt": 0,
-               "total": 12.6
-           }
+                                   end=end1) == {'rate': 'Minute',
+                                                 'cost': {
+                                                     "raw": 11.25,
+                                                     "gst": 0.56,
+                                                     "pst": 0.79,
+                                                     "pvrt": 0,
+                                                     "total": 12.6
+                                                 }}
 
-    assert evo.cost_taxes_included(rates=rates,
-                                   taxes=taxes,
+    assert evo.cost_taxes_included(inputs=inputs,
                                    start=start2,
-                                   end=end2) == {
-               "raw": 90.94,
-               "gst": 4.55,
-               "pst": 6.37,
-               "pvrt": 0,
-               "total": 101.85
-           }
+                                   end=end2) == {'rate': 'Hour',
+                                                 'cost': {
+                                                     "raw": 90.94,
+                                                     "gst": 4.55,
+                                                     "pst": 6.37,
+                                                     "pvrt": 0,
+                                                     "total": 101.85
+                                                 }}
 
-    assert evo.cost_taxes_included(rates=rates,
-                                   taxes=taxes,
+    assert evo.cost_taxes_included(inputs=inputs,
                                    start=start3,
-                                   end=end3) == {
-               "raw": 90.99,
-               "gst": 4.62,
-               "pst":  6.47,
-               "pvrt": 1.5,
-               "total": 103.59
-           }
+                                   end=end3) == {'rate': 'Day',
+                                                 'cost': {
+                                                     "raw": 90.99,
+                                                     "gst": 4.62,
+                                                     "pst": 6.47,
+                                                     "pvrt": 1.5,
+                                                     "total": 103.59
+                                                 }}
