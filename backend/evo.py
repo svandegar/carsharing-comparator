@@ -1,5 +1,16 @@
-import datetime
 import math
+import datetime
+import os
+dirname = os.path.dirname(__file__)
+DATA_INPUT = os.path.join(dirname, 'data','evo.json')
+
+
+def get_inputs(input):
+        import json
+        with open(input) as file:
+            return json.load(file)
+
+inputs = get_inputs(DATA_INPUT)
 
 
 def cost_raw(rates: dict,
@@ -19,9 +30,23 @@ def cost_raw(rates: dict,
     return cost + rates['access_fee']
 
 
-def calculate_taxes():
-    pass
+def calculate_taxes(taxes: dict,
+                    hours: int,
+                    raw_cost: float) -> dict:
+    if hours < 8:
+        pvrt = 0
+    else:
+        pvrt = int(max(1, hours / 24)) * taxes['pvrt']
 
+    gst = (raw_cost + pvrt) * taxes['gst'] / 100
+    pst = (raw_cost + pvrt) * taxes['pst'] / 100
 
-def best_rate():
-    pass
+    total = gst + pst + pvrt + raw_cost
+
+    return ({
+        "raw": round(raw_cost,2),
+        "pvrt": round(pvrt, 2),
+        "gst": round(gst, 2),
+        "pst": round(pst, 2),
+        "total": round(total, 2)
+    })

@@ -44,8 +44,24 @@ def test_cost_raw():
 
 
 def test_calculate_taxes():
-    pass
+    assert evo.calculate_taxes(
+        taxes=taxes,
+        hours=2,
+        raw_cost=10) == {
+               "raw": 10,
+               "gst": 0.5,
+               "pst": 0.7,
+               "pvrt": 0,
+               "total": 11.2
+           }
 
-
-def test_best_rate():
-    pass
+    assert evo.calculate_taxes(
+        taxes=taxes,
+        hours=32,
+        raw_cost=97) == {
+               "raw": 97,
+               "gst": 4.92,
+               "pst": 6.89,
+               "pvrt": 1.5,
+               "total": 110.32
+           }

@@ -3,6 +3,7 @@ import backend
 from website import app
 from website.utils import forms
 
+
 @app.route('/', methods=['GET', 'POST'])
 def home():
     form = forms.InputForm(request.form)

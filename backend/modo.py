@@ -2,7 +2,6 @@ import datetime
 import os
 dirname = os.path.dirname(__file__)
 DATA_INPUT = os.path.join(dirname, 'data','modo.json')
-# DATA_INPUT = os.getcwd()+r'\..\backend\data\modo.json'
 
 
 def get_inputs(input):
@@ -21,7 +20,8 @@ def cost_raw(subscription: str,
              passengers: int,
              type='normal') -> int:
     """
-    Return the rate for Modo Monthly members, given the passed arguments
+    Return the rate for Modo members, given the input parameters
+    :param subsription
     :param rates: dict: rates
     :param night: dict: night hours
     :param distance: int: kilometers
@@ -42,7 +42,7 @@ def cost_raw(subscription: str,
     else:
         type_rates = applicable_rates[type]
 
-    # calculated the rate based on duration
+    # calculate the rate based on duration
     if duration_hours < 24:
 
         # night rate

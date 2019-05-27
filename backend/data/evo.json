@@ -1,0 +1,13 @@
+{
+  "rates": {
+    "minute": 0.41,
+    "hour": 14.99,
+    "day": 89.99,
+    "access_fee": 1
+  },
+  "taxes": {
+    "gst": 5,
+    "pst": 7,
+    "pvrt": 1.5
+  }
+}
